@@ -4,7 +4,6 @@ import { createGameConfig } from './game/config';
 import { Navbar } from './components/Navbar';
 import { QuizModal } from './components/QuizModal';
 import { FormulaGuideModal } from './components/FormulaGuideModal';
-import { StandaloneExportModal } from './components/StandaloneExportModal';
 import { VictoryGameOverModal } from './components/VictoryGameOverModal';
 import { LEVEL_CONFIGS } from './data/physicsQuestions';
 import { BookOpen, ShieldCheck, Zap, HelpCircle } from 'lucide-react';
@@ -36,7 +35,6 @@ export default function App() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [quizCallback, setQuizCallback] = useState<((correct: boolean) => void) | null>(null);
   const [isFormulaGuideOpen, setIsFormulaGuideOpen] = useState(false);
-  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [resultModal, setResultModal] = useState<{
     isOpen: boolean;
     type: 'victory' | 'gameover';
@@ -158,7 +156,6 @@ export default function App() {
         currentLevel={currentLevel}
         onSelectLevel={startLevel}
         onOpenFormulaGuide={() => setIsFormulaGuideOpen(true)}
-        onOpenExportModal={() => setIsExportModalOpen(true)}
       />
 
       {/* Main Game Stage Area */}
@@ -256,12 +253,6 @@ export default function App() {
       <FormulaGuideModal
         isOpen={isFormulaGuideOpen}
         onClose={() => setIsFormulaGuideOpen(false)}
-      />
-
-      {/* 1-File HTML Exporter for Blogger & GitHub Pages */}
-      <StandaloneExportModal
-        isOpen={isExportModalOpen}
-        onClose={() => setIsExportModalOpen(false)}
       />
 
       {/* Victory & Game Over Result Dialogs */}

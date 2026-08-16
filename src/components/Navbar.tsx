@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, BookOpen, Code2, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, BookOpen } from 'lucide-react';
 import { soundManager } from '../game/audio';
 
 interface NavbarProps {
   onOpenFormulaGuide: () => void;
-  onOpenExportModal: () => void;
   onSelectLevel: (lvl: number) => void;
   currentLevel: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenFormulaGuide,
-  onOpenExportModal,
   onSelectLevel,
   currentLevel
 }) => {
@@ -87,16 +85,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <BookOpen className="w-4 h-4" />
             <span className="hidden sm:inline">Buku Rumus</span>
-          </button>
-
-          {/* Standalone 1-File HTML Exporter (For Blogger / GitHub Pages) */}
-          <button
-            onClick={onOpenExportModal}
-            className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-sky-950/50 transition cursor-pointer"
-          >
-            <Code2 className="w-4 h-4 text-amber-300" />
-            <span>Export HTML / Blogger</span>
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
           </button>
         </div>
       </div>

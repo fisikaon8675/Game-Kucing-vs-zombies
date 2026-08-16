@@ -24,6 +24,9 @@ export function createGameConfig(containerId: string): Phaser.Types.Core.GameCon
         debug: false
       }
     },
+    audio: {
+      noAudio: true
+    },
     scene: [BootScene, MenuScene, StoryScene, GameScene]
   };
 }
