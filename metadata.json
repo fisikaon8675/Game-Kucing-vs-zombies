@@ -1,0 +1,6 @@
+{
+  "name": "Prof. Mpus: Meow-chanics Defense",
+  "description": "Game edukasi fisika pertahanan laboratorium berbasis Phaser 3 bersama Prof. Mpus melawan Zombi Hampa melalui kuis fisika interaktif SMA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
